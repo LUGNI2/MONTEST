@@ -1,6 +1,7 @@
 
 package Ateliers.gui;
 
+import java.awt.FlowLayout;
 
 public class MainWindow extends javax.swing.JFrame {
 
@@ -13,60 +14,77 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        drawingPanel1 = new Ateliers.gui.DrawingPanel();
+        createFruitButtonGroup = new javax.swing.ButtonGroup();
+        mainPanel = new javax.swing.JPanel();
+        buttonTopPanel = new javax.swing.JPanel(new FlowLayout(FlowLayout.LEFT));
+        pommeButton = new javax.swing.JToggleButton();
+        orangeButton = new javax.swing.JToggleButton();
+        topMenuBar = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        menuItemOpen = new javax.swing.JMenuItem();
+        menuItemQuit = new javax.swing.JMenuItem();
+        menuEdit = new javax.swing.JMenu();
+
+        createFruitButtonGroup.add(pommeButton);
+        createFruitButtonGroup.add(orangeButton);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Hello World !");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        mainPanel.setLayout(new java.awt.BorderLayout());
+
+        buttonTopPanel.setPreferredSize(new java.awt.Dimension(400, 35));
+
+        pommeButton.setText("Pomme");
+        buttonTopPanel.add(pommeButton);
+
+        orangeButton.setText("Orange");
+        buttonTopPanel.add(orangeButton);
+
+        jMenu3.setText("File");
+
+        menuItemOpen.setText("Open");
+        jMenu3.add(menuItemOpen);
+
+        menuItemQuit.setText("Quit");
+        menuItemQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                menuItemQuitActionPerformed(evt);
             }
         });
+        jMenu3.add(menuItemQuit);
 
-        javax.swing.GroupLayout drawingPanel1Layout = new javax.swing.GroupLayout(drawingPanel1);
-        drawingPanel1.setLayout(drawingPanel1Layout);
-        drawingPanel1Layout.setHorizontalGroup(
-            drawingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 224, Short.MAX_VALUE)
-        );
-        drawingPanel1Layout.setVerticalGroup(
-            drawingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 114, Short.MAX_VALUE)
-        );
+        topMenuBar.add(jMenu3);
+
+        menuEdit.setText("Edit");
+        topMenuBar.add(menuEdit);
+
+        setJMenuBar(topMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(drawingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jButton1)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addComponent(buttonTopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(drawingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(jButton1)
-                .addContainerGap(84, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(buttonTopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+    private void menuItemQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemQuitActionPerformed
+        // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_menuItemQuitActionPerformed
 
     public static void main(String args[]) {
         
@@ -78,7 +96,15 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Ateliers.gui.DrawingPanel drawingPanel1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel buttonTopPanel;
+    private javax.swing.ButtonGroup createFruitButtonGroup;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JMenu menuEdit;
+    private javax.swing.JMenuItem menuItemOpen;
+    private javax.swing.JMenuItem menuItemQuit;
+    private javax.swing.JToggleButton orangeButton;
+    private javax.swing.JToggleButton pommeButton;
+    private javax.swing.JMenuBar topMenuBar;
     // End of variables declaration//GEN-END:variables
 }
